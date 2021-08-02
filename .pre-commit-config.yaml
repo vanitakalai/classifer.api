@@ -1,0 +1,33 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.0.1
+  hooks:
+  - id: check-case-conflict
+  - id: check-json
+  - id: check-yaml
+  - id: end-of-file-fixer
+  - id: trailing-whitespace
+  - id: mixed-line-ending
+
+- repo: https://github.com/psf/black
+  rev: 21.6b0
+  hooks:
+  - id: black
+
+- repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
+  rev: v2.1.0
+  hooks:
+  - id: pretty-format-yaml
+    args: [--autofix, --indent, '2']
+
+# pylint has to be run on the local system due to the way the pre-commit venv is created
+- repo: local
+  hooks:
+  - id: pylint
+    name: pylint
+    entry: poetry run pylint
+    language: system
+    types: [python]
