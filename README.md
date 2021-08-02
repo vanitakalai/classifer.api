@@ -37,7 +37,7 @@ payload = {'name': 'Print Dress', 'description': 'Dress', 'product_id':128544}
 response = requests.get('http://0.0.0.0:80/api/v1/predict', params=payload)
 response.json()
 ```
-2. Interact with Fast API docs
+3. Interact with Fast API docs
     - http://0.0.0.0:80/docs
     - http://0.0.0.0:80/redoc
 
