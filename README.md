@@ -52,3 +52,7 @@ poetry install
 ```
 uvicorn classifier_api:main:app --reload
 ```
+## To-Dos
+* Move models to cloud storage
+* Implement CI/CD pipelines for auto releasing to cloud server (or package if to be used locally)
+* Implement authentication

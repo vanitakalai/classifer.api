@@ -18,9 +18,12 @@ class Prediction(BaseModel):
     response_model=Prediction,
 )
 async def get_prediction(
-    name: str, description: str, product_id: int, url: Optional[List[str]] = Query(None)
+    name: str,
+    description: str,
+    product_id: int,
+    image_url: Optional[List[str]] = Query(None),
 ) -> dict:
 
-    pattern = run_models(name, description, url)
+    pattern = run_models(name, description, image_url)
 
     return {"pattern": pattern, "product_id": product_id}
