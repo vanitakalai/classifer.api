@@ -26,6 +26,7 @@ classifier_api
 
 1. Create and run docker image
 ```
+cd classifier.api
 docker build -t classifier_api .
 docker run -d --name api_container -p 80:80 classifier_api
 ```
